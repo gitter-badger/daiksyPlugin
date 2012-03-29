@@ -10,22 +10,14 @@ class daiksyPlugin(app: Application) extends Plugin {
   private lazy val twitter = new TwitterFactory().getInstance
     
   /** とりあえず常にtrueにしとこ. */
-  override lazy val enabled = {
-    true
-  }
+  override lazy val enabled = true
 
   /** ログでも出すか. */
-  override def onStart() {
-    Logger.trace("変態が...はじまる！！")
-  }
+  override def onStart() = Logger.trace("変態が...はじまる！！")
 
   /** ログ出しとく. */
-  override def onStop() {
-    Logger.trace("タイ━━━━｜｜Φ｜（｜゜｜∀｜゜｜）｜Φ｜｜━━━━ホ！！")
-  }
+  override def onStop() = Logger.trace("タイ━━━━｜｜Φ｜（｜゜｜∀｜゜｜）｜Φ｜｜━━━━ホ！！")
   
   /** daiksyのタイムラインを取得する誰得関数 */
-  def timeline = {
-    twitter.getUserTimeline("daiksy")
-  }
+  def timeline = twitter.getUserTimeline("daiksy")
 }
