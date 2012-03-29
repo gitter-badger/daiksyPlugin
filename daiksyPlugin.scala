@@ -28,5 +28,5 @@ class daiksyPlugin(app: Application) extends Plugin {
    *  daiksyの最新ツイートを取得. 本当は取得できなかったときの処理とかいるけどとりあず無視.
    *  getUserTimelineからのresponseListをscalaのコレクションとして扱って高階関数とか使いたいなー.  
    */
-  def lastTweet = twitter.getUserTimeline(userName).get(0).getText
+  def lastTweet = timeline.get(0).getText
 }
