@@ -9,6 +9,7 @@ import twitter4j.Status
 /** 誰得プラグイン */
 class daiksyPlugin(app: Application) extends Plugin {
   val name = "daiksy Plugin"
+  val userName = "daiksy"
   private lazy val twitter = new TwitterFactory().getInstance
 
   /** とりあえず常にtrueにしとこ. */
@@ -21,11 +22,11 @@ class daiksyPlugin(app: Application) extends Plugin {
   override def onStop() = Logger.trace("タイ━━━━｜｜Φ｜（｜゜｜∀｜゜｜）｜Φ｜｜━━━━ホ！！")
 
   /** daiksyのタイムラインを取得する誰得関数 */
-  def timeline = twitter.getUserTimeline("daiksy")
+  def timeline = twitter.getUserTimeline(userName)
 
   /**
    *  daiksyの最新ツイートを取得. 本当は取得できなかったときの処理とかいるけどとりあず無視.
-   *  getUserTimelineからのresuponseListをscalaのコレクションとして扱って高階関数とか使いたいなー.  
+   *  getUserTimelineからのresponseListをscalaのコレクションとして扱って高階関数とか使いたいなー.  
    */
-  def lastTweet = twitter.getUserTimeline("daiksy").get(0).getText
+  def lastTweet = twitter.getUserTimeline(userName).get(0).getText
 }
