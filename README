@@ -1,0 +1,2 @@
+play2.0のプラグインです.
+Twitter4jを使用していますので、play2.0の/lib にtwitter4jのjarを入れてつかってください.
